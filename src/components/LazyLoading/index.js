@@ -1,7 +1,11 @@
-import React, { Component } from "react";
-import PDFPreview from "./components/PDFPreview";
+/**
+ * @flow
+ **/
 
-class App extends Component {
+import React, { Component, Suspense } from "react";
+const LazyPDFDocument = React.lazy(() => import("../../components/PDFPreview"));
+
+class LazyLoading extends Component {
   state = {
     name: "",
     showPDFPreview: false
@@ -15,7 +19,7 @@ class App extends Component {
     const greeting = `Hello ${this.state.name}`;
 
     return (
-      <div className="App">
+      <div>
         <input
           placeholder="Enter your name"
           type="text"
@@ -23,10 +27,14 @@ class App extends Component {
         />
 
         <button onClick={this.handleClick}>Generate PDF</button>
-        {this.state.showPDFPreview && <PDFPreview title={greeting} />}
+        {this.state.showPDFPreview && (
+          <Suspense fallback={<div>Loading...</div>}>
+            <LazyPDFDocument title={greeting} />
+          </Suspense>
+        )}
       </div>
     );
   }
 }
 
-export default App;
+export default LazyLoading;
