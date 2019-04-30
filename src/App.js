@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import PDFPreview from "./components/PDFPreview";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    name: "",
+    showPDFPreview: false
+  };
+
+  handleClick = () => this.setState({ showPDFPreview: true });
+
+  handleNameChange = (event) => this.setState({ name: event.target.value });
+
+  render() {
+    const greeting = `Hello ${this.state.name}`;
+
+    return (
+      <div className="App">
+        <input
+          placeholder="Enter your name"
+          type="text"
+          onChange={this.handleNameChange}
+        />
+
+        <button onClick={this.handleClick}>Generate PDF</button>
+        {this.state.showPDFPreview && <PDFPreview title={greeting} />}
+      </div>
+    );
+  }
 }
 
 export default App;
