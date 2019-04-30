@@ -3,7 +3,7 @@
  **/
 
 import React, { Component, Suspense } from "react";
-const LazyPDFDocument = React.lazy(() => import("../../components/PDFPreview"));
+const LazyPDFDocument = React.lazy(() => import("../PDFPreview"));
 
 class LazyLoading extends Component {
   state = {

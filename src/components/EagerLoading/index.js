@@ -3,7 +3,7 @@
  **/
 
 import React, { Component } from "react";
-import PDFPreview from "./components/PDFPreview";
+import PDFPreview from "../PDFPreview";
 
 class EagerLoading extends Component {
   state = {
