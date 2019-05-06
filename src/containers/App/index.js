@@ -4,11 +4,11 @@
 
 import React, { Component } from "react";
 
-import WindowExample from "../../components/WindowExample";
+import HOC from "../../components/HOC/Bad/UsageInRender";
 
 class App extends Component {
   render() {
-    return <WindowExample />;
+    return <HOC />;
   }
 }
 
