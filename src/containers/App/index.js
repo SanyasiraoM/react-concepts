@@ -4,11 +4,11 @@
 
 import React, { Component } from "react";
 
-import MultipleContext from "../../components/Context/MultipleContext";
+import WindowExample from "../../components/WindowExample";
 
 class App extends Component {
   render() {
-    return <MultipleContext />;
+    return <WindowExample />;
   }
 }
 
