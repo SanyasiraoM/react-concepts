@@ -4,11 +4,11 @@
 
 import React, { Component } from "react";
 
-import ForwardRef from "../../components/ForwardRef";
+import StrictMode from "../../components/StrictMode";
 
 class App extends Component {
   render() {
-    return <ForwardRef />;
+    return <StrictMode />;
   }
 }
 
