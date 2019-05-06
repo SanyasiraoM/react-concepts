@@ -4,11 +4,11 @@
 
 import React, { Component } from "react";
 
-import StrictMode from "../../components/StrictMode";
+import MultipleContext from "../../components/Context/MultipleContext";
 
 class App extends Component {
   render() {
-    return <StrictMode />;
+    return <MultipleContext />;
   }
 }
 

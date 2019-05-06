@@ -2,6 +2,8 @@
  * @flow
  **/
 
+"use strict";
+
 import React, { Component } from "react";
 import withStrictMode from "./withStrictMode";
 
