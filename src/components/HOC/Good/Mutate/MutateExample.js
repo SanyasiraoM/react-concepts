@@ -23,6 +23,10 @@ class ClassMutateExample extends Component {
     console.log("Next Props MutateExample: ", nextProps);
   }
 
+  static staticMethod() {
+    console.log("Called static method");
+  }
+
   render() {
     return <div />;
   }

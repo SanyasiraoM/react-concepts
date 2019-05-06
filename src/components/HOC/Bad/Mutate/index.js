@@ -13,6 +13,10 @@ class HOC extends Component {
     this.setState({ prop1: "Value2" });
   };
 
+  componentDidMount() {
+    MutateExample.staticMethod();
+  }
+
   render() {
     return (
       <div>

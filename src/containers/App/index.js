@@ -4,7 +4,7 @@
 
 import React, { Component } from "react";
 
-import HOC from "../../components/HOC/Bad/UsageInRender";
+import HOC from "../../components/HOC/Good/Mutate";
 
 class App extends Component {
   render() {
