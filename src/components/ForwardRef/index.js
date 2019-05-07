@@ -1,24 +1,18 @@
-import React from "react";
-import Context from "../Context/WithContext";
+/**
+ * @flow
+ **/
 
-class ForwardRef extends Context {
+import React, { Component } from "react";
+import HOCButton from "./HOCButton";
+
+class ForwardRefExample extends Component {
+  componentDidMount() {
+    this.buttonRef.current.consoleMethod();
+  }
   render() {
-    const FancyButton = React.forwardRef((props, ref) => {
-      console.log("ref", ref);
-      return (
-        <button ref={ref} className="FancyButton">
-          {props.children}
-        </button>
-      );
-    });
-
-    const ref = React.createRef();
-    return (
-      <div>
-        <FancyButton ref={ref}>Click me!</FancyButton>
-      </div>
-    );
+    this.buttonRef = React.createRef();
+    return <HOCButton ref={this.buttonRef}>Click me!</HOCButton>;
   }
 }
 
-export default ForwardRef;
+export default ForwardRefExample;
