@@ -6,7 +6,7 @@ import MutateExample from "./MutateExample";
 
 import React, { Component } from "react";
 
-class HOC extends Component {
+class MutateComponent extends Component {
   state = { prop1: "Value1" };
 
   onClick = () => {
@@ -27,4 +27,4 @@ class HOC extends Component {
   }
 }
 
-export default HOC;
+export default MutateComponent;
